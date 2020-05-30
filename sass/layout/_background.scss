@@ -1,0 +1,33 @@
+.background{
+    z-index: 50;
+    &__wallet{
+        width: 70rem;
+
+        @include respond(tab-big ) {
+            width: 100%;
+        }
+        @include respond(tab ) {
+            display: none;
+        }
+    }
+    &__pig{
+        position: absolute;
+        top: 65vh;
+    }
+    &__stroked{
+        width: 6rem;
+        position: absolute;
+        top: 65vh;
+        left: 50vw;
+    }
+    &__filled{
+        width: 3rem;
+    }
+    &__solo{
+        width: 8rem;
+    }
+    // &__path{
+    //     // width: 80vw;
+    //     // height: 30vh;
+    // }
+}

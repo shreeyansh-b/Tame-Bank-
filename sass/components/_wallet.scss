@@ -1,0 +1,159 @@
+.wallet{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    display: flex;
+    width: 90%;
+    min-height: 75vh;
+    position: relative;
+    // margin-top: 15rem;
+    // margin-left: 5rem;
+    padding: 1rem 5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include respond(tab-big) {
+        padding: 1rem 3rem;
+    }
+    @include respond(tab-land) {
+        flex-direction: row;
+        padding: 1rem 2rem;
+        width: 100%;
+        min-height: auto;
+    }
+    @include respond(tab) {
+        flex-direction: column;
+    }
+    &__top{
+        text-align: center;
+        margin-bottom: 3rem;
+        @include respond(tab-land) {
+            margin-bottom: 0;
+        }
+        @include respond(tab) {
+            margin-bottom: 1rem;
+        }
+    }
+    &__mid{
+        align-self: normal;
+        max-height: 70vh;
+        overflow: scroll;
+        overflow-x: hidden;
+
+        /* width */
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #c200be; 
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #8f008c; 
+        }
+
+        @include respond(tab-land) {
+            overflow-x: scroll;
+            overflow-y: hidden; // @ https://stackoverflow.com/questions/35968553/webkit-scrollbar-css-always-a-white-box-in-corner
+            max-width: 80%;
+        }
+        @include respond(tab) {
+            max-width: 100%;
+        }
+
+    }
+    &__bot{
+        bottom: 0;
+        margin-top: 1rem;
+        @include respond(tab-land) {
+            margin-top: 0rem;
+        }
+        @include respond(tab) {
+            margin-top: 1rem;
+        }
+    }
+    &__heading{
+        color: #ffffff;
+        font-size: 2rem;
+        font-weight: 400;
+        
+    }
+    &__cards{
+        @include respond(tab-land) {
+            display: flex;
+        }
+    }
+    &__blue{
+        background: linear-gradient(90deg, rgba(137,221,251,1) 0%, rgba(7,188,253,1) 100%);
+    }
+    &__red{
+        background: linear-gradient(90deg, rgba(254,87,179,1) 0%, rgba(252,10,143,1) 100%);
+    }
+    &__lightred{
+        background: linear-gradient(90deg, rgba(255,194,196,1) 0%, rgba(255,153,157,1) 100%);
+    }
+    &__card{
+        padding: 2rem;
+        border-radius: 5rem;
+        margin-bottom: 3rem;
+        @include respond(tab-land) {
+            margin-bottom: 1rem;
+            margin-right: 2rem;
+        }
+        &__top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__mid{
+            margin-top: -0.8rem;
+            
+        }
+        // &__bot{
+
+        // }
+    }
+    &__card:hover{
+        cursor: pointer;
+        user-select: none;
+    }
+    &__img{
+        width: 10rem;
+    }
+    &__dots{
+
+        width: 3rem;
+    }
+    &__balance{
+        text-align: center;
+        color: #ffffff;
+    }
+    &__cardnumber{
+        text-align: center;
+        color: #d3d3d3;
+        font-weight: 300;
+        font-size: 2.6rem;
+    }
+    &__newcard{
+        border: 0.15rem solid #ffffff;
+        border-radius: 5rem;
+        background-color: transparent;
+        transition: all 0.4s ease-in;
+    }
+    &__newcard:hover{
+        background-color: #c200be;
+    }
+    &__link:link,&__link:visited, &__link:active, &__link:hover {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1rem;
+    }
+}

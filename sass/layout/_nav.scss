@@ -1,0 +1,173 @@
+.navbar{
+    margin-left: auto;
+    ul{
+        list-style: none;
+    }
+    &__item{
+        display: inline-block;
+        min-width: 8rem;
+        border-radius: 2rem;
+        text-align: center;
+        margin-right: 8rem;
+        vertical-align: bottom; //cause overflow hidden pushes it upwards more @ https://stackoverflow.com/questions/20566710/overflowhidden-displayinline-block-moves-text-upwards
+        @include respond(tab-port) {
+            display: none;
+        }
+        &-btn{
+            margin-right: 0;
+            @include respond(tab-port) {
+                margin-left: auto;
+                display: inline-block;
+                margin-right: 10rem;
+            }
+        }
+    }
+    &__link:link, &__link:visited{
+        text-decoration: none;
+        display: block; //to have a tag throughout the item
+        width: 100%;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        color: #ffffff;
+    }
+    &__link:hover, &__link:active{
+        text-decoration: none;
+        display: block; //to have a tag throughout the item
+        width: 100%;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        color: #ffffff;
+    }
+    &__mobile{
+        display: none;
+        @include respond(tab-port) {
+            display: block;
+            margin-right: 0;
+            margin-bottom: 5rem;
+            font-size: 4rem;
+        }
+    }
+}
+
+.usernav{
+    &__item{
+        margin-right: 3rem;
+        min-width: auto;
+        font-size: 2rem;
+        @include respond(tab-port) {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+    }
+    &__link:link, &__link:visited{
+        padding: 0;
+        border-radius: 0;
+    }
+    &__link:hover, &__link:active{
+        padding: 0;
+        border-radius: 0;
+    }
+    &__img{
+        display: block; //to fix the <a> tag being wider than img
+        width: 5rem;
+        height: 5rem;
+        clip-path: circle(50% at 50% 50%);
+    }
+}
+.mobile{
+    &__navbar{
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition-delay: 0.15s;
+        @include respond(tab-port) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+        }
+    }
+    &__list{
+        @include centrealign;
+        width: 100%;
+    }
+
+
+}
+#mobile__nav-label{
+    position: fixed;
+    z-index: 10000;
+    background-color: $color-purple;
+    width: 5rem;
+    height: 5rem;
+    padding: 4rem;
+    border-radius: 50%;
+    line-height: 1;
+    right: 5rem;
+    top: 3rem;
+    box-shadow: 0rem 0.4rem 0.5rem rgba($color: #000000, $alpha: 0.2);
+    display: none;
+    span{
+        @include centrealign;
+        width: 4rem;
+        height: 2px;
+        background-color: #ffffff;
+        display: inline-block;
+        &::before{
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 4rem;
+            height: 2px;
+            background-color: #ffffff;
+            top: 1px;
+            transform: rotateZ(90deg);
+            transition: all 0.4s ease-in-out;
+        }
+    }
+    @include respond(tab-port) {
+        display: block;
+    }
+}
+
+.mobile__nav--bg{
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+    position: fixed;
+    top: 4rem;
+    right: 6rem;
+    z-index: 500;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    display: none;
+    @include respond(tab-port) {
+        display: block;
+    }
+}
+
+#mobile__nav-btn{
+    visibility: hidden;
+    &:checked{
+        + label.mobile__nav--label{
+            span{
+                &::before{
+                    top: 0px;
+                    transform: rotateZ(0deg);
+                }
+            }
+        }
+        ~ div.mobile__nav--bg{          // ~ sibling selector not direct sibling
+            transform: scale(60);
+        }
+        ~ nav.mobile__navbar{
+            visibility: visible;
+            opacity: 1;
+        }
+
+    }
+}
+

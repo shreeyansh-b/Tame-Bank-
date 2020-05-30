@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no">
+    <title>Tame Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="sass/main.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="particle" class="particle"></div>
+    <header class="header">
+        <div class="logo">
+            <a href="#"><img src="images/logo.png" alt="logo" class="logo__img"></a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li class="navbar__item"><a href="#" class="navbar__link">About</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__link">Services</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__link">Plans</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__link">Career</a></li>
+            </ul>
+        </nav>
+        <li class="navbar__item navbar__item-btn"><a href="#modal-login" class="navbar__link btn btn__sign" id="btn-sign">Sign In</a></li>
+
+        <input type="checkbox" name="mobile" id="mobile__nav-btn" value="checked">
+        <label for="mobile__nav-btn" id="mobile__nav-label" class="mobile__nav--label"> <span></span></label>
+        <div class="mobile__nav--bg"></div>    
+
+        <nav class="mobile__navbar">
+            <ul class="mobile__list">
+                <li class="navbar__item navbar__mobile"><a href="#" class="navbar__link">About</a></li>
+                <li class="navbar__item navbar__mobile"><a href="#" class="navbar__link">Services</a></li>
+                <li class="navbar__item navbar__mobile"><a href="#" class="navbar__link">Plans</a></li>
+                <li class="navbar__item navbar__mobile"><a href="#" class="navbar__link">Career</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper wrapper-home">
+
+        <div class="background">
+            <object data="images/wallet_isometric.svg" type="image/svg+xml" class="background__wallet">
+                <!-- <img src="yourfallback.jpg" /> -->
+            </object>
+            <!-- <object data="images/Pig.svg" type="image/svg+xml" class="background__pig"></object>
+            <object data="images/stroked_triangles.svg" type="image/svg+xml" class="background__stroked"></object>
+            <object data="images/solo_triangle.svg" type="image/svg+xml" class="background__solo"></object>
+    
+            <object data="images/filled_triangle.svg" type="image/svg+xml" class="background__filled"></object>
+            <object data="images/filled_triangle.svg" type="image/svg+xml" class="background__filled background__filled-1"></object>
+            <object data="images/filled_triangle.svg" type="image/svg+xml" class="background__filled background__filled-2"></object> -->
+    
+    
+            <!-- <object data="images/path.svg" type="image/svg+xml" class="background__path"></object>        -->
+    
+    
+        </div>
+
+        <main class="main">
+            <h1 class="main__heading">
+                Tame Bank
+            </h1>
+            <h2 class="main__tagline">Whatever you need, we’ve got you covered</h2>
+            <p class="main__para">Exciting offers. More big money grabbing words. Blah blah blah highest interest rates! Premium accounts, cheap lockers, loans, more loans, tax evasion, blah blah!!</p>
+            <div style="display: inline-block; margin-top: 5rem;"><a href="#modal-register" class="main__cta btn btn__cta" id="btn-join">Join Now ></a></div>  <!--div so that when a is display block it doesn't cover the entire width-->
+        </main>
+        <div class="apps"> 
+            <ul>
+                <li class="apps__item">
+                    <a href="#" class="apps__link">
+                        <img src="images/appstore.svg" alt="appstore" class="apps__img">
+                    </a>
+                </li>
+                <li class="apps__item">
+                    <a href="#" class="apps__link">
+                        <img src="images/gplay.png" alt="gplay" class="apps__img">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal__background"> </div>
+
+    <div class="modal modal__login" id="modal-login">
+
+        <a href="#" class="modal__close-link" id="modal-close1"><img src="images/close.svg" alt="close" class="modal__close"></a> <!--using object was causing bugs with a tag-->
+
+
+        <div class="modal__inputs">
+            <label for="uID">Email</label>
+            <input type="email" name="user_email" id="uID" class="modal__user" autofocus>
+            <label for="pass">Password</label>
+            <input type="password" name="user_pass" id="pass" class="modal__pass">
+            <div style="display: inline-block; margin-top: 2.2rem;">
+                <a href="#" class=" modal__btn" id="user_signin">Sign In</a>
+            </div>
+        </div>
+        <div class="modal__warning">
+            <p>Email or password entered is wrong!</p>
+            <img src="images/warning.svg" alt="">
+        </div>
+    </div>
+    <div class="modal modal__register" id="modal-register">
+
+        <a href="#" class="modal__close-link" id="modal-close2"><img src="images/close.svg" alt="close" class="modal__close"></a> <!--using object was causing bugs with a tag-->
+
+        <div class="modal__inputs">
+            <label for="user_name">Full Name</label>
+            <input type="text" name="user_name" id="user_name" class="modal__user" autofocus>
+            <p class="modal__error modal__error-name">Name should atleast be 3 letters long and must be followed by last name</p>
+            <label for="user_email">Email</label>
+            <input type="email" name="user_email" id="user_email" class="modal__user">
+            <p class="modal__error modal__error-email">Invalid email</p>
+            <p class="modal__error modal__error-email-exists">Email already registered</p>
+            <label for="user_pass">Password</label>
+            <input type="password" name="pass" id="user_pass" class="modal__pass">
+            <p class="modal__error modal__error-pass">Password should atleast be 6 characters long</p>
+            <label for="user_pass2">Confirm Password</label>
+            <input type="password" name="pass" id="user_pass2" class="modal__pass">
+            <p class="modal__error modal__error-pass2">Passwords don't match</p>
+            <div style="display: inline-block; margin-top: 2.2rem;">
+                <a href="#" class=" modal__btn" id="user_reg">Register</a>
+            </div>
+        </div>
+        <div class="modal__check">
+            <p class="modal__para">Welcome To The Tame Family!</p>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha256-+u54FaX9J+k40eAcg5K2YzICSQjrEYBI9gju5nE3HfY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js" integrity="sha256-hBMojZuWKocCflyaG8T19KBq9OlTlK39CTxb8AUWKhY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js" integrity="sha256-4HOrwHz9ACPZBxAav7mYYlbeMiAL0h6+lZ36cLNpR+E=" crossorigin="anonymous"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

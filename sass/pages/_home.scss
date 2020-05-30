@@ -1,0 +1,159 @@
+.main{
+    margin-top: 10rem;
+
+}
+.particle{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.main{
+    position: relative;
+    z-index: 200;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    text-align: center;
+    padding: 5rem;
+    @include respond(phone-l ) {
+        padding: 2rem;
+    }
+    &__heading{
+        color: #ffffff;
+        font-size: 12.5rem;
+        display: inline-block;
+        line-height: 1;
+    }
+    &__tagline{
+        color: #efefef;
+        font-style: italic;
+        margin-top: 2rem;
+    }
+    &__para{
+        color: #ddd;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    // &__cta{
+
+    // }
+}
+
+.wrapper{
+    display: grid;
+    max-width: 160rem;
+    gap: 5rem;
+    padding: 2rem 5rem;
+    align-items: center;
+    &-home{
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        grid-template-rows: 50rem 15rem;
+        margin: 11rem auto;
+
+        @include respond(tab-port ) {
+            grid-template-rows: auto;
+        }
+        @include respond(tab ) {
+            grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+        }
+        @include respond(phone-l ) {
+            grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+            padding: 2rem;
+        }
+                
+                
+        
+        @include respond(bigdesktop ) {
+            margin: 8rem auto;
+        }
+
+
+        @include respond(fourkchromedesktop) {
+            margin: 22rem auto;
+        }
+    }
+    &-dashboard{
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        // grid-template-columns: 1fr 1fr 1fr;
+        // grid-template-rows: 1fr 1fr 1fr;
+        // justify-content: center;
+        margin: 11rem auto 0 auto;
+        @include respond(tab-land) {
+            grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
+            grid-template-rows: 35rem 35rem;
+        }
+        @include respond(tab) {
+            grid-template-rows: 35rem 1fr;
+            margin: 18rem auto;
+        }
+        @include respond(phone-l ) {
+            padding: 2rem;
+        }
+        @include respond(phone-s) {
+            grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+        }
+    }
+}
+
+.notifications{
+    width: 85%;
+    @include respond(tab-land) {
+        margin: 0 auto;
+    }
+    &__viewer{
+        margin-top: 20rem; 
+    }
+    &__expander{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__link:link, &__link:visited, &__link:active, &__link:hover{
+        color:  #ffffff;
+        text-decoration: underline;
+    }
+}
+
+#doughnut{
+    position: relative;
+    width: 30rem !important ; 
+    height: 30rem !important ;
+    margin: 6rem auto;
+}
+#barGraph{
+    width: 40rem !important ; 
+    height: 40rem !important ;
+    margin: 6rem auto;
+}
+
+.doughnut__overall{
+    margin: -23rem auto 0 auto;
+    text-align: center;
+    // @include respond(tab-land) {
+    //     margin-top: -24rem;
+    //     margin-left: 50rem;
+    // }
+}
+
+
+.profile{
+    &__list{
+        display: none;
+        position: absolute;
+        margin-top: 2rem;
+        background-color: $color-purple;
+        left: -70%;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+    &__item{
+        padding: 1rem;
+        background-color: transparent;
+        width: 10rem;
+        
+    }
+    &__item:hover{
+        background-color: darken($color-purple,20);
+    }
+}

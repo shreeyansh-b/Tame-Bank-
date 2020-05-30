@@ -1,0 +1,41 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(phone) {
+        font-size: 40%;
+    }
+    @include respond(phone-s) {
+        font-size: 37%;
+    }
+
+    //here starts min width
+    @include respond(fourkchromedesktop) {
+        font-size: 75%;
+    }
+    @include respond(fourkdesktop) {
+        font-size: 100%;
+    }
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.6rem;
+
+    line-height: 1.7;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    background-color: $color-darktwo;
+    // position: relative;
+}

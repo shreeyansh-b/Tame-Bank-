@@ -1,0 +1,24 @@
+.calendar{
+    width: 55%;
+    margin: auto;
+    &__wrapper{
+        grid-row: 1/2;
+        grid-column: 2/3;
+        @include respond(tab-land) {
+            grid-row: 2/3;
+            grid-column: 1/2;
+            display: flex;
+        }
+        @include respond(tab) {
+            flex-direction: column;
+        }
+    }
+}
+
+#calendar{
+    width: 55%;
+    margin: auto;
+    @include respond(tab-land) {
+        width: auto;
+    }
+} 

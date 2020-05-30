@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no">
+        <title>Tame Bank</title>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+        <link href="sass/main.css" rel="stylesheet">
+    </head>
+<body>
+    
+    <header class="header">
+        <div class="logo">
+            <a href="#"><img src="images/logo.png" alt="logo" class="logo__img"></a>
+        </div>
+        <!-- <nav class="navbar">
+            <ul>
+                <li class="navbar__item"><a href="#" class="navbar__link">Overview</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__link" id="btnTransactions">Transactions</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__link">Reports</a></li>
+            </ul>
+        </nav> -->
+        <nav class="navbar usernav">
+            <ul>
+                <li class="navbar__item usernav__item wallet__newcard"><a href="#modal__transactions/" class="navbar__link" id="btnTransactions">Transfer</a></li>
+                <li class="navbar__item usernav__item" style="position: relative; vertical-align: sub; margin-right: 0;"><a href="#" class="navbar__link usernav__link" id="profile-btn" ><img src="images/avatar.jpg" alt="user_avatar" class="usernav__img"></a>
+                <ul class="profile__list">
+                    <li class="profile__item"><a href="#" class="navbar__link usernav__link profile__link" id="profile-name">Name</a></li>
+                    <li class="profile__item"><a href="#" class="navbar__link usernav__link profile__link" id="profile-logout">Logout</a></li>
+                </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper wrapper-dashboard">
+
+
+        <div class="wallet">
+            <div class="wallet__top">
+                <h1 class="wallet__heading" style="font-size: 3rem;">Wallet</h1>
+            </div>
+            <div class="wallet__mid">
+                <div class="wallet__cards">
+
+                    <!-- <div class="wallet__card wallet__blue">
+                        <div class="wallet__card__top">
+                            <img src="images/mastercard.svg" alt="cardtypelogo" class="wallet__img">
+                            <a href="#" class="wallet__link"><img src="images/keyboard_control.svg" alt="menu" class="wallet__img wallet__dots"></a>
+                        </div>
+                        <div class="wallet__card__mid">
+                            <h1 class="wallet__balance">$69,420</h1>
+                        </div>
+                        <div class="wallet__card__bot">
+                            <h1 class="wallet__cardnumber">**** **** **** 4126</h1>
+                        </div>
+                    </div>
+
+                    <div class="wallet__card wallet__red">
+                        <div class="wallet__card__top">
+                            <img src="images/visa-logo.svg" alt="cardtypelogo" class="wallet__img">
+                            <a href="#" class="wallet__link"><img src="images/keyboard_control.svg" alt="menu" class="wallet__img wallet__dots"></a>
+                        </div>
+                        <div class="wallet__card__mid">
+                            <h1 class="wallet__balance">$69,420</h1>
+                        </div>
+                        <div class="wallet__card__bot">
+                            <h1 class="wallet__cardnumber">**** **** **** 4126</h1>
+                        </div>
+                    </div> -->
+                    
+
+
+
+
+                </div>
+            </div>
+            <div class="wallet__bot">
+                <div class="wallet__newcard">
+                    <a href="#modal__addCard/" class="wallet__link" id="addCard-btn">
+                        <img src="images/add.svg" alt="add" class="wallet__svg">
+                        <h1 class="wallet__heading">New Card</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    <!--@ https://vcalendar.io/installation.html#cdn -->
+
+    <!-- @ https://vcalendar.io/datepicker.html for popover fixes -->
+        <div class="calendar__wrapper">
+            <div id='calendar'>
+                <v-calendar is-dark></v-calendar> <!--just having v calendar removes the popup-->
+            </div>
+            <canvas id="barGraph" width="400" height="400"></canvas>
+        </div>
+
+
+        <div class="notifications">
+            <canvas id="doughnut" width="400" height="400"></canvas>
+            <div class="notifications__expander">
+                <h1 class="notification__heading notification__heading-grey">
+                    Transactions
+                </h1>
+                <a href="#modal__transfers/" class="notifications__link" id="btnSeeAll">
+                    <h1 class="notification__heading">
+                        See All
+                    </h1>
+                </a>
+            </div>
+            <div class="doughnut__overall">
+                <h1 class="notification__heading notification__heading-grey">Overall</h1> 
+                <h1 class="notification__heading" id="overall__amount">Overall</h1> 
+            </div>
+            <div class="notifications__viewer">
+
+
+                <div class="notification">
+                    <div class="notification__icon notification__icon-blue">
+                        <img src="images/credit.svg" alt="credit" class="notification__svg">
+                    </div>
+                    <div class="notification__transfer">
+                        <h1 class="notification__heading notification__heading-grey">
+                            Uber
+                        </h1>
+                        <h1 class="notification__heading">
+                            $45.00
+                        </h1>
+                    </div>
+                    <div class="notification__date">
+                        <h1 class="notification__heading notification__heading-grey">
+                            23/05/19
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="notification">
+                    <div class="notification__icon notification__icon-blue">
+                        <img src="images/credit.svg" alt="credit" class="notification__svg">
+                    </div>
+                    <div class="notification__transfer">
+                        <h1 class="notification__heading notification__heading-grey">
+                            Uber
+                        </h1>
+                        <h1 class="notification__heading">
+                            $45.00
+                        </h1>
+                    </div>
+                    <div class="notification__date">
+                        <h1 class="notification__heading notification__heading-grey">
+                            23/05/19
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="notification">
+                    <div class="notification__icon notification__icon-red">
+                        <img src="images/debit.svg" alt="credit" class="notification__svg">
+                    </div>
+                    <div class="notification__transfer">
+                        <h1 class="notification__heading notification__heading-grey">
+                            Uber
+                        </h1>
+                        <h1 class="notification__heading">
+                            $45.00
+                        </h1>
+                    </div>
+                    <div class="notification__date">
+                        <h1 class="notification__heading notification__heading-grey">
+                            23/05/19
+                        </h1>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div> <!--wrapper-->
+    <div class="modal__background"></div>
+
+    <div class="modal modal__transfers" id="modal__transfers">
+
+        <a href="#" class="modal__close-link" id="modal-close1"><img src="images/close.svg" alt="close" class="modal__close"></a> <!-- object was causing bugs with anchor tag-->
+
+        <div class="modal__transfers-notifications">
+            <div class="notification">
+                <div class="notification__icon notification__icon-red">
+                    <img src="images/debit.svg" alt="credit" class="notification__svg">
+                </div>
+                <div class="notification__transfer">
+                    <h1 class="notification__heading notification__heading-grey">
+                        Uber
+                    </h1>
+                    <h1 class="notification__heading">
+                        $45.00
+                    </h1>
+                </div>
+                <div class="notification__date">
+                    <h1 class="notification__heading notification__heading-grey">
+                        23/05/19
+                    </h1>
+                </div>
+            </div>
+            <div class="notification">
+                <div class="notification__icon notification__icon-red">
+                    <img src="images/debit.svg" alt="credit" class="notification__svg">
+                </div>
+                <div class="notification__transfer">
+                    <h1 class="notification__heading notification__heading-grey">
+                        Uber
+                    </h1>
+                    <h1 class="notification__heading">
+                        $45.00
+                    </h1>
+                </div>
+                <div class="notification__date">
+                    <h1 class="notification__heading notification__heading-grey">
+                        23/05/19
+                    </h1>
+                </div>
+            </div>
+            <div class="notification">
+                <div class="notification__icon notification__icon-red">
+                    <img src="images/debit.svg" alt="credit" class="notification__svg">
+                </div>
+                <div class="notification__transfer">
+                    <h1 class="notification__heading notification__heading-grey">
+                        Uber
+                    </h1>
+                    <h1 class="notification__heading">
+                        $45.00
+                    </h1>
+                </div>
+                <div class="notification__date">
+                    <h1 class="notification__heading notification__heading-grey">
+                        23/05/19
+                    </h1>
+                </div>
+            </div>
+        </div>
+                
+
+
+
+
+    </div>
+
+
+    <div class="modal modal__addCard" id="modal__addCard">
+        <a href="#" class="modal__close-link" id="modal-close2"><img src="images/close.svg" alt="close" class="modal__close"></a> <!-- object was causing bugs with anchor tag-->
+        <p class="modal__para" style="color: #fff; text-align: center; font-weight: 400;" id="cardselecttext">Select card type</p>
+        <div class="modal__cardSelect">
+            <div class="modal__cardvisa">
+                <img src="images/visa-logo.svg" alt="visa">
+            </div>
+            <div class="modal__mastercard">
+                <img src="images/mastercard.svg" alt="mastercard">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal__transactions" id="modal__transactions">
+        <a href="#" class="modal__close-link" id="modal-close3"><img src="images/close.svg" alt="close" class="modal__close"></a> <!-- object was causing bugs with anchor tag-->
+        <p class="modal__para" style="color: #fff; text-align: center; font-weight: 400;">Select Transfer Type</p>
+        <div class="modal__transactions-select">
+            <div class="modal__radioBtns">
+                <label class="radio">
+                    <input type="radio" name="transfer_betweenAccounts" value="true" checked onclick="setBetweenAccts()"> <!-- https://www.aspsnippets.com/Articles/RadioButton-OnClick-event-example-in-JavaScript.aspx onclick cause else addeventlist doesn't work with radios-->
+                    <span>Transfer Between Accounts</span>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="transfer_betweenAccounts" value="false" onclick="resetBetweenAccts()">
+                    <span>Transfer To External Account</span>
+                </label>
+            </div>
+
+            <div class="modal__dropdown">
+
+                <section class="container">
+                    <p class="modal__para" style="color: #fff; text-align: center; font-weight: 400;">From</p>
+                    <div class="dropdown dropdown-dark">
+                      <select name="accntfrom" class="dropdown-select" id="dropdownfrom">
+                      </select>
+                    </div>
+                </section>
+                <section class="container" id="betweenaccounts">
+                    <p class="modal__para" style="color: #fff; text-align: center; font-weight: 400;">To</p>
+                    <div class="dropdown dropdown-dark">
+                      <select name="accntto" class="dropdown-select dropdown-select2" id="dropdownto">
+                      </select>
+                    </div>
+                    <div class="modal__accountdetails" style="margin-top: 1rem;">
+                        <label>Amount<input type="number" id="transferamtbwaccts"></label>
+                    </div>
+                </section>
+                <div class="modal__accountdetails" id="externalaccount">
+                    <p class="modal__para" style="color: #fff; text-align: center; font-weight: 400;">To</p>
+                    <label>Account Holder's Name<input type="text" id="transfername"></label>
+                    <label>Account Number<input type="text" id="transfernumber"></label>
+                    <label>Amount<input type="number" id="transferamt"></label>
+                </div>
+              </div>
+              <div class="modal__maketransfer" style="text-align: center;">
+                <div style="display: inline-block; margin-top: 4.3rem;">
+                    <a href="#" class= "btn btn__cta" id="btn-transfer">Transfer &gt;</a>
+                </div>
+              </div>
+
+            
+        </div>
+    </div>
+
+      <!-- 1. Link Vue Javascript -->
+      <script src='https://unpkg.com/vue/dist/vue.js'></script>
+  
+      <!-- 2. Link VCalendar Javascript (Plugin automatically installed) -->
+      <script src='https://unpkg.com/v-calendar'></script>
+  
+      <!--3. Create the Vue instance-->
+      <!-- <script>
+        new Vue({
+          el: '#calendar',
+          data: {
+            // Data used by the date picker
+            mode: 'single',
+            selectedDate: null,
+          }
+        })
+      </script> -->
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha256-+u54FaX9J+k40eAcg5K2YzICSQjrEYBI9gju5nE3HfY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js" integrity="sha256-hBMojZuWKocCflyaG8T19KBq9OlTlK39CTxb8AUWKhY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js" integrity="sha256-4HOrwHz9ACPZBxAav7mYYlbeMiAL0h6+lZ36cLNpR+E=" crossorigin="anonymous"></script>
+    <!-- <script src="js/ui.js"></script> -->
+    <!-- <script src="js/app.js"></script> -->
+    <script src="js/bankingLogic.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

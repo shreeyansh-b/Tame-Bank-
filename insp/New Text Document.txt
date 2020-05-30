@@ -1,0 +1,7 @@
+dark 010312
+purple 6F77D0
+blue 4203FF
+red FC0A8F
+cyan 07BCFD
+dark2 312856
+brown BF7275

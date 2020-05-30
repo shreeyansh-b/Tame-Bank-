@@ -166,7 +166,7 @@ profileName.addEventListener('click' , e => {
 const profileLogout = document.querySelector("#profile-logout");
 profileLogout.addEventListener('click' , (e) => {
     window.localStorage.clear();
-    document.location.href="/index.html";
+    document.location.href="/Tame-Bank-/";
     e.preventDefault();
 });
 

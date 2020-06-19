@@ -9,7 +9,7 @@ Register, Sign-in, add cards and get free $500, make transfers to both external 
 
 [Tame-Bank](https://shreeyansh-b.github.io/Tame-Bank-/).
 
-Either register with a fake email and password and then sign in. Or use 
+Either register with a fake email and password and then sign in or use 
 
 _Email_: **tester@test.com**
 

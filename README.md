@@ -2,7 +2,7 @@
 
 Tame Bank is a full-stack web app of a fictitious bank. 
 
-Register, Sign-in, add cards and get free $500, make transfers to both external accounts and in etween accounts. 
+Register, Sign-in, add cards and get free $500, make transfers to both external accounts and in between accounts. 
 
 
 ## Demo
